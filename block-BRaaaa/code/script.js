@@ -3,7 +3,7 @@
 let input = document.querySelector(`input`);
 let ul = document.querySelector(`ul`);
 
-allMovie = [];
+let allMovie = [];
 
 function handleInput(e) {
   let value = e.target.value;
@@ -31,6 +31,7 @@ function handleDelete(e) {
 
 function createUi(data) {
   ul.innerHTML = ``;
+
   data.forEach((element, i) => {
     let li = document.createElement(`li`);
     li.id = i;
