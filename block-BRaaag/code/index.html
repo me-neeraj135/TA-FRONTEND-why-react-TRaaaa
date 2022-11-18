@@ -1,0 +1,89 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>movie watch list</title>
+    <link rel="stylesheet" href="/code/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>movie watch list</h1>
+      <div class="movieBox">
+        <input type="text" placeholder="Enter Your Movie" />
+        <ul></ul>
+      </div>
+    </main>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      let input = document.querySelector(`input`);
+      let rootUl = document.querySelector(`ul`);
+
+      let allData = JSON.parse(localStorage.getItem(`movies`)) || [];
+
+      function handleChange(event) {
+        let index = Number(event.target.getAttribute(`data-id`));
+        allData[index].watched = !allData[index].watched;
+        localStorage.setItem(`movies`, JSON.stringify(allData));
+        createUi(allData);
+      }
+
+      function handleDelete(event) {
+        let index = Number(event.target.getAttribute(`data-id`));
+        allData.splice(index, 1);
+        localStorage.setItem(`movies`, JSON.stringify(allData));
+        createUi(allData);
+      }
+
+      // create element function
+
+      // create ui
+      function createUi(data = allData) {
+        let dataUi = data.map((data, i) => {
+          return (
+            <li data-id={i} key={data.name}>
+              <p className="para">{data.name}</p>
+              <button onClick={handleChange} data-id={i}>
+                {data.watched ? `watched` : `To watch`}
+              </button>
+              <span onClick={handleDelete} data-id={i}>
+                ❌
+              </span>
+            </li>
+          );
+        });
+        ReactDOM.render(dataUi, rootUl);
+      }
+
+      input.addEventListener(`keyup`, e => {
+        if (e.keyCode === 13) {
+          if (e.target.value === ``) {
+            alert(`please enter your movie`);
+          } else {
+            let obj = {
+              name: e.target.value,
+              watched: false,
+            };
+            allData.push(obj);
+            localStorage.setItem(`movies`, JSON.stringify(allData));
+
+            createUi(allData);
+            e.target.value = ``;
+          }
+        }
+      });
+      createUi(allData);
+    </script>
+  </body>
+</html>
