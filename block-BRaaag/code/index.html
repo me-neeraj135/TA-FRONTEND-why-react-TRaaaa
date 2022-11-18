@@ -52,7 +52,7 @@
       function createUi(data = allData) {
         let dataUi = data.map((data, i) => {
           return (
-            <li data-id={i}>
+            <li data-id={i} key={data.name}>
               <p className="para">{data.name}</p>
               <button onClick={handleChange} data-id={i}>
                 {data.watched ? `watched` : `To watch`}
