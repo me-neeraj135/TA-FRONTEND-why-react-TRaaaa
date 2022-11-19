@@ -1,0 +1,70 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/code/style.css" />
+    <title>Card Preview</title>
+  </head>
+  <body>
+    <div id="root" class="container">hello world</div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      let cardInfo = {
+        title: "City Lights in New York",
+        date: new Date(),
+        comments: 67,
+        subTitle: "The city that never sleeps.",
+        description:
+          "New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.",
+        category: "photos",
+        imageURL:
+          "https://images.unsplash.com/photo-1610874933184-7728fd666162?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+      };
+
+      var today = cardInfo.date;
+      var y = today.getFullYear();
+      var m = today.getMonth() + 1;
+      var d = today.getDate();
+      const month = cardInfo.date.toLocaleString("default", { month: "short" });
+
+      let ui = (
+        <>
+          <figure className="relative">
+            <img
+              className="fullWidth"
+              src={cardInfo.imageURL}
+              alt="cityBanner"
+            />
+            <div className="dmCircle">
+              {d} <br /> {month}
+            </div>
+            <p className="category absolute">{cardInfo.category}</p>
+          </figure>
+
+          <div className="infoBox">
+            <h1 className="title">{cardInfo.title}</h1>
+            <h2 className="subTitle">{cardInfo.subTitle}</h2>
+            <p className="para">{cardInfo.description}</p>
+            <div>
+              <span className="time">{"o 6 min ago"}</span>
+              <span className="comments">{"39 comments"}</span>
+            </div>
+          </div>
+        </>
+      );
+      ReactDOM.render(ui, document.getElementById("root"));
+    </script>
+  </body>
+</html>
