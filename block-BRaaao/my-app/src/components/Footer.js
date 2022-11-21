@@ -9,13 +9,13 @@ function Footer(props) {
         </div>
         <div className="navBox">
           <div className="footerNav">
-            <i class="fa-brands fa-facebook "></i>
+            <i className="fa-brands fa-facebook "></i>
           </div>
           <div className="footerNav">
-            <i class="fa-brands fa-twitter"></i>
+            <i className="fa-brands fa-twitter"></i>
           </div>
           <div className="footerNav">
-            <i class="fa-brands fa-instagram"></i>
+            <i className="fa-brands fa-instagram"></i>
           </div>
         </div>
       </footer>
