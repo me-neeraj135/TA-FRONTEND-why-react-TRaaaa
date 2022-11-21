@@ -1,20 +1,22 @@
 /** @format */
 
-function Articles(props) {
-  console.log(props);
-
+function Article(props) {
   return (
     <>
-      <article className="article">
-        <figure>
-          <img className="fullWidth" src={props.urlToImage} alt="img" />
+      <li className="article">
+        <figure className="relative">
+          <img className="fullWidth" src={props.urlToImage} alt={props.title} />
+          <figcaption>
+            <span> {props.title}</span>
+          </figcaption>
         </figure>
-        <span> {props.author}</span>
-        <title>{props.title}</title>
         <p>{props.description}</p>
-      </article>
+        <button>
+          <a href={props.url}>Read more</a>
+        </button>
+      </li>
     </>
   );
 }
 
-export default Articles;
+export default Article;

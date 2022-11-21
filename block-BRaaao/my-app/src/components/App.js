@@ -2,20 +2,18 @@
 
 import Header from "./Header";
 import Hero from "./Hero";
-import Article from "./Article";
+import Articles from "./Articles";
 import Footer from "./Footer";
-import data from "../data.json";
 
 function App() {
   return (
     <>
       <Header />
-      <Hero />
-      <div className="main">
-        {data.map(info => {
-          return <Article {...info} />;
-        })}
-      </div>
+      <main className="wrapper">
+        <Hero />
+        <Articles />
+      </main>
+
       <Footer />
     </>
   );
