@@ -1,0 +1,43 @@
+/** @format */
+
+/* size */
+
+#root {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  width: 20%;
+  margin: auto;
+  border: 1px solid;
+}
+.small {
+  width: 5rem;
+  padding: 1rem;
+}
+.medium {
+  width: 10rem;
+  padding: 1rem;
+}
+
+.large {
+  width: 15rem;
+  padding: 1rem;
+}
+
+/* types */
+
+.primary {
+  border: 1px solid;
+}
+.secondary {
+  color: white;
+  background-color: blue;
+}
+.tertiary {
+  color: blue;
+  border: 1px solid green;
+}
+.button {
+  margin: 0.5rem 0;
+}
