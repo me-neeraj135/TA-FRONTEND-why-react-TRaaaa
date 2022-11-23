@@ -5,47 +5,48 @@ function Header() {
     <header className="navbar">
       <div className="container flex">
         <div className="flex">
-          <a className="brand" href="#"></a>
-
+          <a className="brand" href="#">
+            <strong>Hydro</strong>
+          </a>
           <nav>
-            <ul className="flex nev-menu nav-menu-primary">
+            <ul className="flex nav-menu nav-menu-primary">
               <li>
-                <a href="#">home</a>
+                <a href="#">Home</a>
               </li>
               <li>
-                <a href="#">home</a>
+                <a href="#">About</a>
               </li>
               <li>
-                <a href="#">home</a>
+                <a href="#">Blog</a>
               </li>
               <li>
-                <a href="#">home</a>
+                <a href="#">Our Work</a>
               </li>
               <li>
-                <a href="#">home</a>
+                <a href="#">Contacts</a>
               </li>
             </ul>
           </nav>
         </div>
         <nav>
-          <ul class="flex nav-menu nav-menu-secondary">
-            <li class="social-media-item">
+          <ul className="flex nav-menu nav-menu-secondary">
+            <li className="social-media-item">
               <a href="#">
-                <i class="fab fa-facebook-square"></i>
+                <i className="fab fa-facebook-square"></i>
               </a>
             </li>
-            <li class="social-media-item">
+            <li className="social-media-item">
               <a href="#">
-                <i class="fab fa-twitter"></i>
+                <i className="fab fa-twitter"></i>
               </a>
             </li>
-            <li class="social-media-item">
+            <li className="social-media-item">
               <a href="#">
-                <i class="fab fa-instagram"></i>
+                <i className="fab fa-instagram"></i>
               </a>
             </li>
             <li>
-              <a class="btn btn-primary" href="#">
+              <a className="btn btn-primary" href="#">
                 {" "}
                 Sign in / Join{" "}
               </a>
